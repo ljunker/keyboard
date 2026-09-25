@@ -1,0 +1,4 @@
+{
+    "sketch": "keyboard.ino",
+    "board": "rp2040:rp2040:rpipico2w"
+}

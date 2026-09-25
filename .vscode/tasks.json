@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Arduino: Compile Pico 2W Bluetooth",
+      "type": "process",
+      "command": "arduino-cli",
+      "args": [
+        "compile",
+        "--fqbn",
+        "rp2040:rp2040:rpipico2w:ipbtstack=ipv4btcble",
+        "${workspaceFolder}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "Arduino: Upload Pico 2W",
+      "type": "process",
+      "command": "arduino-cli",
+      "args": [
+        "upload",
+        "--fqbn",
+        "rp2040:rp2040:rpipico2w:ipbtstack=ipv4btcble",
+        "--port",
+        "${input:serialPort}",
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "serialPort",
+      "type": "promptString",
+      "description": "Serieller Port des Pico",
+      "default": "/dev/cu.usbmodem101"
+    }
+  ]
+}

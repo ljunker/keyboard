@@ -1,0 +1,8 @@
+{
+    "arduino.useArduinoCli": true,
+    "arduino.path": "/opt/homebrew/bin",
+    "arduino.commandPath": "arduino-cli",
+    "arduino.analyzeOnOpen": true,
+    "arduino.analyzeOnSettingChange": true,
+    "C_Cpp.default.compilerPath": "/opt/homebrew/bin/g++-16"
+}
