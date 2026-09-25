@@ -8,19 +8,43 @@ namespace {
 
 void pressModifiers(uint8_t modifiers) {
 
-    if (modifiers & MOD_CTRL) {
+    if (
+        (
+            static_cast<uint32_t>(modifiers)
+            &
+            static_cast<uint32_t>(MOD_CTRL)
+        ) != 0U
+    ) {
         KeyboardBLE.press(KEY_LEFT_CTRL);
     }
 
-    if (modifiers & MOD_SHIFT) {
+    if (
+        (
+            static_cast<uint32_t>(modifiers)
+            &
+            static_cast<uint32_t>(MOD_SHIFT)
+        ) != 0U
+    ) {
         KeyboardBLE.press(KEY_LEFT_SHIFT);
     }
 
-    if (modifiers & MOD_ALT) {
+    if (
+        (
+            static_cast<uint32_t>(modifiers)
+            &
+            static_cast<uint32_t>(MOD_ALT)
+        ) != 0U
+    ) {
         KeyboardBLE.press(KEY_LEFT_ALT);
     }
 
-    if (modifiers & MOD_GUI) {
+    if (
+        (
+            static_cast<uint32_t>(modifiers)
+            &
+            static_cast<uint32_t>(MOD_GUI)
+        ) != 0U
+    ) {
         KeyboardBLE.press(KEY_LEFT_GUI);
     }
 }
@@ -81,12 +105,6 @@ void keyboardExecute(
 
 
         case ActionType::Key:
-
-            executeKeyboardAction(action);
-
-            return;
-
-
         case ActionType::Shortcut:
 
             executeKeyboardAction(action);

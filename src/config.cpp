@@ -41,7 +41,7 @@ const EncoderPins ENCODER_PINS[ENCODER_COUNT] = {
 // Falls ein Encoder später falsch herum läuft:
 // 1 zu -1 ändern.
 
-const int8_t ENCODER_DIRECTION[ENCODER_COUNT] = {
+const int ENCODER_DIRECTION[ENCODER_COUNT] = {
     1,
     1
 };

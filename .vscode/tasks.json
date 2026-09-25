@@ -9,6 +9,12 @@
         "compile",
         "--fqbn",
         "rp2040:rp2040:rpipico2w:ipbtstack=ipv4btcble",
+        "--warnings",
+        "all",
+        "--build-property",
+        "compiler.c.extra_flags=-Wall -Wextra",
+        "--build-property",
+        "compiler.cpp.extra_flags=-Wall -Wextra",
         "--output-dir",
         "${workspaceFolder}/build",
         "--clean",
@@ -18,6 +24,43 @@
         "kind": "build",
         "isDefault": true
       },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "Lint: Generate Compile Database",
+      "type": "process",
+      "command": "arduino-cli",
+      "args": [
+        "compile",
+
+        "--fqbn",
+        "rp2040:rp2040:rpipico2w:ipbtstack=ipv4btcble",
+
+        "--only-compilation-database",
+
+        "--build-path",
+        "${workspaceFolder}/.clang-build",
+
+        "--build-property",
+        "compiler.c.extra_flags=-Wall -Wextra",
+
+        "--build-property",
+        "compiler.cpp.extra_flags=-Wall -Wextra",
+
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint: Own Code",
+      "type": "process",
+      "command": "${workspaceFolder}/scripts/lint.sh",
+      "dependsOn": "Lint: Generate Compile Database",
       "problemMatcher": "$gcc",
       "presentation": {
         "reveal": "always",

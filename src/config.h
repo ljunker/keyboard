@@ -54,10 +54,10 @@ enum class ActionType : uint8_t {
 
 enum Modifier : uint8_t {
     MOD_NONE  = 0,
-    MOD_CTRL  = 1 << 0,
-    MOD_SHIFT = 1 << 1,
-    MOD_ALT   = 1 << 2,
-    MOD_GUI   = 1 << 3
+    MOD_CTRL  = 1U << 0U,
+    MOD_SHIFT = 1U << 1U,
+    MOD_ALT   = 1U << 2U,
+    MOD_GUI   = 1U << 3U
 };
 
 struct Action {
@@ -82,7 +82,7 @@ extern const uint8_t BUTTON_PINS[BUTTON_COUNT];
 
 extern const EncoderPins ENCODER_PINS[ENCODER_COUNT];
 
-extern const int8_t ENCODER_DIRECTION[ENCODER_COUNT];
+extern const int ENCODER_DIRECTION[ENCODER_COUNT];
 
 
 // --------------------------------------------------

@@ -9,4 +9,4 @@ void encodersBegin();
 
 void encodersUpdate();
 
-int8_t encoderMovement(EncoderId encoder);
+int encoderMovement(EncoderId encoder);
