@@ -9,6 +9,9 @@
         "compile",
         "--fqbn",
         "rp2040:rp2040:rpipico2w:ipbtstack=ipv4btcble",
+        "--output-dir",
+        "${workspaceFolder}/build",
+        "--clean",
         "${workspaceFolder}"
       ],
       "group": {
@@ -32,6 +35,8 @@
         "rp2040:rp2040:rpipico2w:ipbtstack=ipv4btcble",
         "--port",
         "${input:serialPort}",
+        "--input-dir",
+        "${workspaceFolder}/build",
         "${workspaceFolder}"
       ],
       "problemMatcher": [],
